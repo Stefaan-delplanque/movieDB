@@ -1,0 +1,19 @@
+<div class="container">
+<mat-card *ngFor="let movie of movieList">
+<mat-card-header class="titleBar">
+  <mat-card-title>{{movie.original_title}} | <span class="year">{{movie.release_date | date:"yyyy"}}</span></mat-card-title>
+  <mat-card-subtitle></mat-card-subtitle>
+</mat-card-header>
+  <mat-card-content>
+    <div class="innerGrid">
+    <div>
+    <img class="poster" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+    </div>
+    <div class="overview">
+    {{movie.overview}}
+      <div class="genre">Genre: {{genreConverter(movie.genre_ids)}}</div>
+    </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+</div>
